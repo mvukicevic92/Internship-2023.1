@@ -88,8 +88,8 @@ public class EmployeeController {
 	
 	@GetMapping(value = "/bySalary")
 	public ResponseEntity<List<EmployeeDTO>> getAllByMonthSalary(@RequestParam(value = "pageNo", defaultValue = "0") Integer pageNo,
-													@RequestParam(required = false) Double monthlySalaryFrom,
-													@RequestParam(required = false) Double monthlySalaryTo){
+													@RequestParam(required = true) Double monthlySalaryFrom,
+													@RequestParam(required = true) Double monthlySalaryTo){
 		Page<Employee> page;
 		
 		try {
