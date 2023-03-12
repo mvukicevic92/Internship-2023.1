@@ -39,16 +39,10 @@ public class EmployeeController {
 	private EmployeeDtoToEmployee toEmployee;
 	
 	@GetMapping
-	public ResponseEntity<List<EmployeeDTO>> getAll(@RequestParam(value = "pageNo", defaultValue = "0") Integer pageNo,
-													@RequestParam(required = false) Double monthlySalaryFrom,
-													@RequestParam(required = false) Double monthlySalaryTo){
+	public ResponseEntity<List<EmployeeDTO>> getAll(@RequestParam(value = "pageNo", defaultValue = "0") Integer pageNo){
 		Page<Employee> page;
+		page = employeeService.findAll(pageNo);
 		
-		try {
-			page = employeeService.searchMonthlySalary(monthlySalaryFrom, monthlySalaryTo, pageNo);
-		} catch (Exception e) {
-			page = employeeService.findAll(pageNo);
-		}
 		
 		return new ResponseEntity<>(toEmployeeDto.convert(page.getContent()), HttpStatus.OK);
 	}
@@ -92,6 +86,19 @@ public class EmployeeController {
 		}
 	}
 	
-
+	@GetMapping(value = "/bySalary")
+	public ResponseEntity<List<EmployeeDTO>> getAllByMonthSalary(@RequestParam(value = "pageNo", defaultValue = "0") Integer pageNo,
+													@RequestParam(required = false) Double monthlySalaryFrom,
+													@RequestParam(required = false) Double monthlySalaryTo){
+		Page<Employee> page;
+		
+		try {
+			page = employeeService.searchMonthlySalary(monthlySalaryFrom, monthlySalaryTo, pageNo);
+		} catch (Exception e) {
+			page = employeeService.findAll(pageNo);
+		}
+		
+		return new ResponseEntity<>(toEmployeeDto.convert(page.getContent()), HttpStatus.OK);
+	}
 
 }
