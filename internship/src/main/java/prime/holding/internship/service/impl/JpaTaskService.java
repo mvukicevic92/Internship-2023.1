@@ -88,6 +88,9 @@ public class JpaTaskService implements TaskService{
 			task.setNumOfCompletedTasks(entry.getValue());
 			cplTasks.add(task);
 		}
+		if(cplTasks.size() < 6) {
+			return cplTasks;
+		}
 		return cplTasks.subList(0, 5);
 	}
 

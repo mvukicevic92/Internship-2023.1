@@ -11,8 +11,8 @@ INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) V
 INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (3, "Test 3", "Basic knowledge of working with databases (SQL)", 3, "2023-03-15", true);
 INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (4, "Test 4", "Ability to use Maven tools", 4, "2023-03-16", true);
 INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (5, "Test 5", "Basics of Spring", 5, "2023-03-17", true);
-INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (6, "Test 6", "Basics of Spring Boot", 6, "2023-03-17", true);
-INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (7, "Test 7", "Basics of MVC", 7, "2023-01-17", true);
+INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (6, "Test 6", "Basics of Spring Boot", 6, "2023-03-17", false);
+INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (7, "Test 7", "Basics of MVC", 7, "2023-01-17", false);
 INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (8, "Test 8", "Using GIT", 1, "2023-02-17", false);
 INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (9, "Test 9", "Using external Java libraries", 2, "2023-02-17", true);
 INSERT INTO task (id, title, description, assignee_id, due_date, is_completed) VALUES (10, "Test 10", "Using the JUnit library for software testing", 3, "2023-03-09", true);
